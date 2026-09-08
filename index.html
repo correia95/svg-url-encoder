@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0891b2" />
+
+    <title>SVG URL Encoder — SVG to data URI for CSS background-image</title>
+    <meta
+      name="description"
+      content="Convert an SVG into a compact data: URI for CSS background-image. URL-encoded (smaller and readable) and base64 forms, a live preview and a size comparison. Free, runs in your browser, no upload."
+    />
+    <link rel="canonical" href="https://svg-url-encoder.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SVG URL Encoder" />
+    <meta property="og:description" content="SVG → data URI for CSS background-image. URL-encoded (usually 20–40% smaller than base64) and base64, with a preview and byte comparison. Client-side." />
+    <meta property="og:url" content="https://svg-url-encoder.correia95.workers.dev/" />
+    <meta property="og:image" content="https://svg-url-encoder.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SVG URL Encoder" />
+    <meta name="twitter:description" content="SVG → data URI for CSS background-image. URL-encoded (usually 20–40% smaller than base64) and base64, with a preview and byte comparison. Client-side." />
+    <meta name="twitter:image" content="https://svg-url-encoder.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SVG URL Encoder",
+        "url": "https://svg-url-encoder.correia95.workers.dev/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Encode an SVG as a URL-encoded or base64 data URI for use in a CSS background-image, with light tidy-up, a live preview and a byte-size comparison, entirely in the browser."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I use an SVG as a CSS background image?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Encode the SVG as a data URI and put it in background-image: url(\"data:image/svg+xml,...\"). This loads with the stylesheet with no extra request and works in contexts where an <img> can't go."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I URL-encode or base64 the SVG?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "URL-encoding is usually 20 to 40 percent smaller than base64 for SVG, because it only escapes the few characters a data URI disallows and leaves the markup readable. Use base64 only if a toolchain requires it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why use single quotes inside the SVG?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The CSS url() value is wrapped in double quotes, so the SVG's own attribute quotes are switched to single quotes to avoid escaping them. This tool does that automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my SVG uploaded anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Encoding runs entirely in your browser and your SVG is stored only in local storage. It works offline once loaded."
+            }
+          }
+        ]
+      }
+    </script>
+    <style>
+      .tt-nav { box-sizing: border-box; width: 100%; margin: 0; background: #f1f1f4; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      .tt-nav a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; text-decoration: none; color: #3730a3; font: 600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .tt-nav a:hover { color: #1e1b4b; text-decoration: underline; }
+      .tt-nav svg { width: 14px; height: 14px; flex: none; }
+      @media (prefers-color-scheme: dark) {
+        .tt-nav { background: #15151b; border-bottom-color: rgba(255, 255, 255, 0.12); }
+        .tt-nav a { color: #c7d2fe; }
+        .tt-nav a:hover { color: #e0e7ff; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="tt-nav"><a href="https://tinytools.correia95.workers.dev/" aria-label="TinyTools home — all tools and games"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 2 11h3v9h5v-6h4v6h5v-9h3z"/></svg><span>TinyTools</span></a></nav>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p style="text-align: center; padding: 20px">
+        This SVG URL encoder needs JavaScript. It converts an SVG into a data URI for CSS
+        background-image.
+      </p>
+    </noscript>
+  </body>
+</html>
